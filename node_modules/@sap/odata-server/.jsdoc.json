@@ -1,0 +1,63 @@
+{
+  "source": {
+    "include": [
+      "node_modules/@sap/odata-commons/lib/edm",
+      "lib/batch/BatchExitHandler.js",
+      "lib/core/OdataRequest.js",
+      "lib/core/OdataResponse.js",
+      "lib/core/ComponentManager.js",
+      "lib/core/RequestContract.js",
+      "lib/core/ResponseContract.js",
+      "lib/core/Service.js",
+      "lib/errors/ApplicationError.js",
+      "node_modules/@sap/odata-commons/lib/format/ContentTypeInfo.js",
+      "node_modules/@sap/odata-commons/lib/format/JsonContentTypeInfo.js",
+      "node_modules/@sap/odata-commons/lib/format/RepresentationKind.js",
+      "node_modules/@sap/odata-commons/lib/http/HttpStatusCode.js",
+      "lib/http/HeaderInfo.js",
+      "node_modules/@sap/odata-commons/lib/http/Preferences.js",
+      "lib/http/PreferencesApplied.js",
+      "node_modules/@sap/odata-commons/lib/uri/UriInfo.js",
+      "node_modules/@sap/odata-commons/lib/uri/UriResource.js",
+      "node_modules/@sap/odata-commons/lib/uri/UriParameter.js",
+      "node_modules/@sap/odata-commons/lib/uri/ExpandItem.js",
+      "node_modules/@sap/odata-commons/lib/uri/SelectItem.js",
+      "node_modules/@sap/odata-commons/lib/uri/OrderByItem.js",
+      "node_modules/@sap/odata-commons/lib/uri/Expression.js",
+      "node_modules/@sap/odata-commons/lib/uri/AliasExpression.js",
+      "node_modules/@sap/odata-commons/lib/uri/BinaryExpression.js",
+      "node_modules/@sap/odata-commons/lib/uri/UnaryExpression.js",
+      "node_modules/@sap/odata-commons/lib/uri/LiteralExpression.js",
+      "node_modules/@sap/odata-commons/lib/uri/MemberExpression.js",
+      "node_modules/@sap/odata-commons/lib/uri/MethodExpression.js",
+      "node_modules/@sap/odata-commons/lib/uri/TypeLiteralExpression.js",
+      "node_modules/@sap/odata-commons/lib/uri/apply",
+      "node_modules/@sap/odata-commons/lib/logging/LoggerFacade.js",
+      "node_modules/@sap/odata-commons/lib/FullQualifiedName.js",
+      "lib/ServiceFactory.js"
+    ],
+    "exclude": [
+      "node_modules/@sap/odata-commons/lib/edm/EdmTypeFactory.js",
+      "node_modules/@sap/odata-commons/lib/edm/KeyFactory.js",
+      "node_modules/@sap/odata-commons/lib/edm/TransientStructuredType.js",
+      "node_modules/@sap/odata-commons/lib/edm/annotationExpression/AnnotationExpressionFactory.js"
+    ]
+  },
+  "opts": {
+    "destination": "_gen/doc/api",
+    "recurse": true,
+    "verbose": true,
+    "pedantic": true,
+    "access": "public,undefined",
+    "readme": "documentation/jsdoc-root.md"
+  },
+  "templates": {
+    "default": {
+      "includeDate": false,
+      "staticFiles": {
+        "include": [
+        ]
+      }
+    }
+  }
+}

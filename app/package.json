@@ -1,0 +1,21 @@
+{
+  "name": "CAPDemoUI",
+  "description": "",
+  "scripts": {
+    "build": "ui5 build",
+    "serve": "ui5 serve -o index.html",
+    "start": "node node_modules/@sap/approuter/approuter.js"
+  },
+  "dependencies": {
+    "@sap/approuter": "^6",
+    "ui5-middleware-simpleproxy": "^0.2.1"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^1.14.0"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-simpleproxy"
+    ]
+  }
+}

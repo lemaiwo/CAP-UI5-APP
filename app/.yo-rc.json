@@ -1,0 +1,21 @@
+{
+  "@sapui5/generator-sapui5-templates": {
+    "promptValues": {
+      "ApplicationTitle": "CAP Demo UI",
+      "ApplicationDescription": "",
+      "FLP": false,
+      "ServiceBaseUri": "http://localhost:4004/v2/browse",
+      "DatasourceUrl": "/v2/browse",
+      "ObjectCollection": "Books",
+      "ObjectCollection_Key": "ID",
+      "Object_Identifier": "title",
+      "Object_Number": "stock",
+      "Object_UnitOfMeasure": "",
+      "LineItemCollection": "",
+      "LineItemCollection_Key": "",
+      "LineItem_Identifier": "",
+      "LineItem_Number": "",
+      "LineItem_UnitOfMeasure": ""
+    }
+  }
+}

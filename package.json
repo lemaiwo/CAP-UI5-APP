@@ -1,0 +1,35 @@
+{
+  "name": "RunUIExample",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^3",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.4.33",
+    "@sap/hana-client": "^2.4.196",
+    "@sap/xsenv": "^2.2.0",
+    "@sap/xssec": "^2.2.5",
+    "express": "^4",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0"
+  },
+  "scripts": {
+    "start:approuter": "cds run & ( cd app && npm start )",
+    "start": "npx cds run"
+  },
+  "devDependencies": {
+    "sqlite3": "^4.2.0"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sql",
+        "credentials": {
+          "database": "my.db"
+        }
+      }
+    }
+  }
+}

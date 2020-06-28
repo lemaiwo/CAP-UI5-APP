@@ -1,0 +1,34 @@
+{
+    "VCAP_SERVICES": {
+        "xsuaa": [
+            {
+                "name": "ias-uaa",
+                "label": "xsuaa",
+                "tags": [
+                    "xsuaa"
+                ],
+                "credentials": {
+                    "tenantmode": "dedicated",
+                    "sburl": "https://internal-xsuaa.authentication.eu10.hana.ondemand.com",
+                    "clientid": "sb-ias-app-EXT_CONTRAC_AUTH_DEV_SPACE!t44784",
+                    "xsappname": "ias-app-EXT_CONTRAC_AUTH_DEV_SPACE!t44784",
+                    "clientsecret": "UVoBT0vPdct7yvKRicToddj9mOw=",
+                    "url": "https://cfcpeaextcontracauthpilot.authentication.eu10.hana.ondemand.com",
+                    "uaadomain": "authentication.eu10.hana.ondemand.com",
+                    "verificationkey": "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuNJnPHZQsW2iXc/ZgSlnuFID4KfZHzrFSVHNoiC+OhdWPVOlazpxsiiU9tYO0sWz5KiGGn1XBLZzXEHVY7OQF57bNKXdyJCIEL6sKEGr94BsP53FWYWtS/2b/mKrKLWDDw1f8W+zL6vLlIefalATga7qe6F4T5akYU2Oux97VuwzpQpH/bV1XXYUxViMoVYhWhmaOL/w0PLrHFMSmHe0Y0xPyi5Vu8Vj53orTT71gm5T53kMEv/hXncctStUh1kxp5TtW/dXUqyJO99nUAuuzPHzYdsGl1f1GKAFymCOYBT6ZEb21yM7YoGAu3mAi+p2zung0B/wXt9FpRoG6d0syQIDAQAB-----END PUBLIC KEY-----",
+                    "apiurl": "https://api.authentication.eu10.hana.ondemand.com",
+                    "identityzone": "cfcpeaextcontracauthpilot",
+                    "identityzoneid": "a89743a0-3556-4668-8fa7-0475ad310938",
+                    "tenantid": "a89743a0-3556-4668-8fa7-0475ad310938"
+                }
+            }
+        ]
+    },
+    "destinations" : [
+        {
+            "name": "srv_api",
+            "url": "http://localhost:4004",
+            "forwardAuthToken": true
+        }
+    ]
+   }

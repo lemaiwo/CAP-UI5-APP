@@ -1,0 +1,32 @@
+import { Destination } from './destination-service-types';
+import { ResilienceOptions } from './resilience-options';
+/**
+ * Fetches all instance destinations from the given URI.
+ *
+ * @param destinationServiceUri - The URI of the destination service
+ * @param jwt - The access token
+ * @param options - Options to use by retrieving destinations
+ * @returns A promise resolving to a list of instance destinations
+ */
+export declare function fetchInstanceDestinations(destinationServiceUri: string, jwt: string, options?: ResilienceOptions): Promise<Destination[]>;
+/**
+ * Fetches all subaccount destinations from the given URI.
+ *
+ * @param destinationServiceUri - The URI of the destination service
+ * @param jwt - The access token
+ * @param options - Options to use by retrieving destinations
+ * @returns A promise resolving to a list of subaccount destinations
+ */
+export declare function fetchSubaccountDestinations(destinationServiceUri: string, jwt: string, options?: ResilienceOptions): Promise<Destination[]>;
+/**
+ * Fetches a specific destination by name from the given URI, including authorization tokens.
+ * For destinations with authenticationType OAuth2SAMLBearerAssertion, this call will trigger the OAuth2SAMLBearerFlow against the target destination.
+ *
+ * @param destinationServiceUri - The URI of the destination service
+ * @param jwt - The access token
+ * @param destinationName - The name of the desired destination
+ * @param options - Options to use by retrieving destinations
+ * @returns A Promise resolving to the destination
+ */
+export declare function fetchDestination(destinationServiceUri: string, jwt: string, destinationName: string, options?: ResilienceOptions): Promise<Destination>;
+//# sourceMappingURL=destination-service.d.ts.map

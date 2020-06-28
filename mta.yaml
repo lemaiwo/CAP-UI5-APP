@@ -1,0 +1,90 @@
+## Generated mta.yaml based on template version 0.2.0
+## appName = RunUIExample
+## language=nodejs; multiTenant=false
+## approuter=
+_schema-version: '3.1'
+ID: RunUIExample
+version: 1.0.0
+description: "A simple CAP project."
+parameters:
+  enable-parallel-deployments: true
+  
+  
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install
+      - npx cds build
+
+modules:
+ # --------------------- SERVER MODULE ------------------------
+ - name: RunUIExample-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   properties:
+     EXIT: 1  # required by deploy.js task to terminate 
+   requires:
+    # Resources extracted from CAP configuration
+    - name: RunUIExample-db
+    - name: runui-uaa-service
+   provides:
+    - name: srv-binding      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+
+ # -------------------- SIDECAR MODULE ------------------------
+ - name: db
+ # ------------------------------------------------------------
+   type: hdb
+   path: db  
+   parameters:
+     app-name: RunUIExample-db  
+   requires:
+    # 'hana' and 'xsuaa' resources extracted from CAP configuration
+    - name: RunUIExample-db
+
+ - name: ui
+   type: html5
+   path: app
+   build-parameters:
+     builder: custom
+     commands:
+       - npm install
+       - npm run build
+   requires:
+     - name: runui-uaa-service
+     - name: srv-binding
+       group: destinations
+       properties:
+         forwardAuthToken: true
+         name: srv_api
+         url: '~{srv-url}'
+
+resources:
+ # services extracted from CAP configuration
+ # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
+# ------------------------------------------------------------
+ - name: RunUIExample-db
+# ------------------------------------------------------------
+   type: com.sap.xs.hdi-container
+   parameters:
+     service: hanatrial  # or 'hanatrial' on trial landscapes
+     service-plan: hdi-shared
+   properties:
+     hdi-service-name: ${service-name}
+ - name: runui-uaa-service
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service: xsuaa
+     service-plan: application  
+     config:
+       xsappname: ui-app-${space}    #  name + space dependency
+       tenant-mode: dedicated
+       ##  path to xs-security.json to add roles and scopes
+       # path: ./xs-security.json
+       ## or inline definition
+       # scopes:
+       # - name: $XSAPPNAME...

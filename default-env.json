@@ -1,0 +1,22 @@
+{
+    "VCAP_SERVICES": {
+        "xsuaa": [
+            {
+                "name": "ias-uaa",
+                "label": "xsuaa",
+                "tags": [
+                    "xsuaa"
+                ],
+                "credentials": {
+                }
+            }
+        ]
+    },
+    "destinations" : [
+        {
+            "name": "srv_api",
+            "url": "http://localhost:4004",
+            "forwardAuthToken": true
+        }
+    ]
+   }
